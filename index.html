@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de l'Artiste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="Logo.png" alt="Logo de l'artiste" style="width: 200px; height: auto;">
+        <nav>
+            <a href="#home">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+    
+
+    <section class="main" id="home">
+        <div class="gallery" id="galleryContainer">
+            <!-- Les images seront ajoutées ici par JavaScript -->
+        </div>
+    </section>
+    
+    
+    <section class="main" id="about">
+        <h2>À propos de moi</h2>
+        <img src="Mama.jpg" alt="Image de présentation" class="small-image">
+        <p>Une artiste exceptionnelle et une merveilleuse maman !</p>
+    </section>
+    
+    
+
+    <section class="main" id="contact">
+        <h2>Contact</h2>
+        <p>Informations de contact.</p>
+        <a href="https://www.facebook.com/pascalepitche.riffont" target="_blank">
+            <img src="Facebook.png" alt="Logo Facebook" class="small-facebook-logo">
+        </a>
+    </section>
+    
+    
+
+    <footer class="footer">
+        <p>© 2024 Maxime Callewaert </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const gallery = document.getElementById('galleryContainer');
+            const imageNames = [
+            "Reflets Urbains.jpg",
+            "Elégance en Mouvement.jpg",
+            "Rythmes et Cercles.jpg",
+            "Silhouettes et Séquences.jpg",
+            "Harmonie Graphique.jpg",
+            "Triptyque Typographique.jpg",
+            "Dialogue Visuel.jpg",
+            "Repos en Forêt.jfif",
+            "Résonance Abstraite.jfif",
+            "Sérénité Cascade.jfif",
+            "Festival Floral.jfif",
+            "Triptyque des Marées.jfif",
+            "Jardin Sauvage.jfif",
+            "Éclat d'Automne.jfif",
+            "Brise Printanière.jfif",
+            "Chuchotements Nocturnes.jfif",
+            "Symphonie en Turquoise et Vert.jfif",
+            "Silhouette en Contemplation 4.jfif",
+            "Silhouette en Contemplation 3.jfif",
+            "Silhouette en Contemplation 2.jfif",
+            "Silhouette en Contemplation 1.jfif",
+            "Ballet Aquatique.jfif",
+            "Été Tranquille.jfif",
+            "Méditation au Rivage.jfif",
+            "Harmonie en Feuillage.jfif",
+            "Carnaval Floral.jfif",
+            "Danse des Couleurs.jfif",
+            "Fenêtre sur l'Océan.jfif",
+            "Rêverie au Crépuscule.jfif",
+            "Brise Marine et Nuages.jfif",
+            "Reflets du Crépuscule.jfif",
+            "Clair de Forêt.jfif",
+            "Mosaïque de la Nature.jfif",
+            "Bouquet d'Automne.jfif",
+            "Pont Vers la Sérénité.jfif",
+            "Explosion Automnale.jfif",
+            "Jardin Aquarelle.jfif",
+            "Éclat Floral.jfif",
+            "Solitude Verdoyante.jfif",
+            "Symphonie Circulaire.jpg"
+        ];
+
+
+
+            
+            let html = '';
+        
+            imageNames.forEach((imageName, index) => {
+                // Supprimer l'extension .jfif
+                const nameWithoutExtension = imageName.replace(/\.jfif$|\.jpg$/i, '');
+
+                html += `
+                    <div class="photo">
+                        <img src="${imageName}" alt="Œuvre ${index + 1}">
+                        <p>${nameWithoutExtension}</p>
+                        <p><span class="sold">Vendue</span></p>
+                    </div>
+                `;
+            });
+        
+            gallery.innerHTML = html;
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionnez tous les liens de navigation dans l'en-tête
+            const navLinks = document.querySelectorAll('header nav a');
+    
+            // Ajoutez un écouteur d'événements à chaque lien
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    // Empêchez le comportement par défaut du lien (le défilement immédiat)
+                    event.preventDefault();
+    
+                    // Récupérez l'ID de la section cible à partir de l'attribut href du lien
+                    const targetId = this.getAttribute('href').substring(1);
+    
+                    // Récupérez la section cible en fonction de son ID
+                    const targetSection = document.getElementById(targetId);
+    
+                    // Faites défiler la page jusqu'à la section cible avec une animation fluide
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    
+    
+    
+    
+</body>
+</html>
