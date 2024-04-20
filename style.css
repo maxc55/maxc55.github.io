@@ -1,0 +1,87 @@
+/* Style général de la page */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* En-tête */
+.header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+}
+
+nav a:hover {
+    color: #555;
+}
+
+/* Section principale */
+.main {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Ajuster la taille minimale pour plus de contrôle */
+    grid-gap: 20px;
+    padding: 0 40px;
+}
+
+.photo {
+    background: #ffffff;
+    border: none;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+/* Pied de page */
+.footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.sold {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.small-image {
+    width: 200px;
+    height: auto;
+}
+
+.small-facebook-logo {
+    width: 50px;
+    height: auto;
+}
